@@ -1,0 +1,60 @@
+MYSQL KODLARIM
+
+
+
+CREATE TABLE IF NOT EXISTS `satisstokprojesi`.`customer`(
+	`id` INT AUTO_INCREMENT  NOT NULL,
+	`firstname` VARCHAR(255), 
+    `lastname` VARCHAR(255), 
+	`address` VARCHAR(255), 
+	`cityid` INT,
+    
+     PRIMARY KEY (`id`)) ENGINE=INNODB
+		
+CREATE TABLE IF NOT EXISTS `satisstokprojesi`.`category`(
+	`id` INT AUTO_INCREMENT  NOT NULL,
+	`name` VARCHAR(255),
+	`parentId` INT,
+    PRIMARY KEY (`id`)) ENGINE=INNODB
+	
+CREATE TABLE IF NOT EXISTS `satisstokprojesi`.`products`(
+	`id` INT AUTO_INCREMENT  NOT NULL,
+	`name` VARCHAR(255), 
+	 `categoryId` INT, 
+	`tarih` DATE(255), 
+	`price` DECIMAL,
+
+    PRIMARY KEY (`id`)) ENGINE=INNODB
+	
+CREATE TABLE IF NOT EXISTS `satisstokprojesi`.`authority`(
+	`id` INT AUTO_INCREMENT  NOT NULL,
+	`firstname` VARCHAR(255), 
+    `lastname` VARCHAR(255), 
+    PRIMARY KEY (`id`)) ENGINE=INNODB
+
+CREATE TABLE IF NOT EXISTS `satisstokprojesi`.`account`(
+	`id` INT AUTO_INCREMENT  NOT NULL,
+	`authorityid` INT,
+	`employeeid` INT,
+	`password` VARCHAR(255),
+    PRIMARY KEY (`id`)) ENGINE=INNODB
+	
+CREATE TABLE IF NOT EXISTS `satisstokprojesi`.`stock`(
+	`id` INT AUTO_INCREMENT  NOT NULL,
+	`productid` INT,
+	`employeeid` INT,
+	`tarih` DATE,
+	`count` INT,
+    PRIMARY KEY (`id`)) ENGINE=INNODB
+
+CREATE TABLE IF NOT EXISTS `satisstokprojesi`.`sales`(
+	`id` INT AUTO_INCREMENT  NOT NULL,
+	`productid` INT,
+	`employeeid` INT,
+	`tarih` DATE,
+	`count` INT,
+	`customerid` Id INT,
+    PRIMARY KEY (`id`)) ENGINE=INNODB
+    
+    
+
