@@ -1,9 +1,10 @@
 package com.Tanla.entity;
 
-public class CategoryContract {
+public class CategoryContract{
 	private int id;
 	private String name;
 	private int parentId;
+	
 	public int getId() {
 		return id;
 	}
@@ -24,7 +25,7 @@ public class CategoryContract {
 	}
 	@Override
 	public String toString() {
-		return "CategoryContract [id=" + id + ", name=" + name + ", parentId=" + parentId + "]";
+		return name;
 	}
 	
 
